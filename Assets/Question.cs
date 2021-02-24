@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Question : MonoBehaviour
 {
+
     public Text side;
     public Text angle;
     public Text variable;
@@ -15,6 +16,13 @@ public class Question : MonoBehaviour
     public Transform sidePos1;
     public Transform sidePos2;
     public Transform sidePos3;
+
+    public double answer;
+
+    void Update()
+    {
+
+    }
 
     public void getQuestion()
     {
@@ -97,42 +105,51 @@ public class Question : MonoBehaviour
         int num = Random.Range(1, 6);
         if (num == 1)
         {
-            choice1.text = real.ToString();
-            choice2.text = fake1.ToString();
-            choice3.text = fake2.ToString();
+            choice1.text = real.ToString(".00");
+            choice2.text = fake1.ToString(".00");
+            choice3.text = fake2.ToString(".00");
         }
         else if (num == 2)
         {
-            choice1.text = real.ToString();
-            choice2.text = fake2.ToString();
-            choice3.text = fake1.ToString();
+            choice1.text = real.ToString(".00");
+            choice2.text = fake2.ToString(".00");
+            choice3.text = fake1.ToString(".00");
         }
         else if (num == 3)
         {
-            choice1.text = fake1.ToString();
-            choice2.text = real.ToString();
-            choice3.text = fake2.ToString();
+            choice1.text = fake1.ToString(".00");
+            choice2.text = real.ToString(".00");
+            choice3.text = fake2.ToString(".00");
         }
         else if (num == 4)
         {
-            choice1.text = fake1.ToString();
-            choice2.text = fake2.ToString();
-            choice3.text = real.ToString();
+            choice1.text = fake1.ToString(".00");
+            choice2.text = fake2.ToString(".00");
+            choice3.text = real.ToString(".00");
         }
         else if (num == 5)
         {
-            choice1.text = fake2.ToString();
-            choice2.text = real.ToString();
-            choice3.text = fake1.ToString();
+            choice1.text = fake2.ToString(".00");
+            choice2.text = real.ToString(".00");
+            choice3.text = fake1.ToString(".00");
         }
         else
         {
-            choice1.text = fake2.ToString();
-            choice2.text = fake1.ToString();
-            choice3.text = real.ToString();
+            choice1.text = fake2.ToString(".00");
+            choice2.text = fake1.ToString(".00");
+            choice3.text = real.ToString(".00");
         }
 
+        answer = real;
+
     }
+
+    public double getAnswer()
+    {
+        return answer;
+    }
+
+
 
     
 }
